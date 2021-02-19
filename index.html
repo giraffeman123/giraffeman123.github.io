@@ -10,15 +10,15 @@
 
         @keyframes slideInFromTop {
             0% {
-                transform: translateY(-100%);
+                transform: translateX(-100%);
             }
 
             100% {
-                transform: translateY(0);
+                transform: translateX(0);
             }
         }
 
-        @keyframes rainbowColors{
+        @keyframes rainbowColors {
             0%,100% {
                 background-position: 0 0;
             }
@@ -28,15 +28,46 @@
             }
         }
 
+        /* The typing effect */
+        @keyframes typing {
+            from {
+                width: 0
+            }
+
+            to {
+                width: 100%
+            }
+        }
+
+        /* The typewriter cursor effect */
+        @keyframes blink-caret {
+            from, to {
+                border-color: transparent
+            }
+
+            50% {
+                border-color: orange
+            }
+        }
+
         body {
             margin: 0;
-            font-family:'Inconsolata';
+            font-family: 'Inconsolata';
+        }
+
+        .typing {
+            color: black;
+            overflow: hidden; /* Ensures the content is not revealed until the animation */
+            border-right: 1px solid orange; /* The typwriter cursor */
+            white-space: nowrap; /* Keeps the content on a single line */
+            /*margin: 0 auto; /* Gives that scrolling effect as the typing happens */ */ letter-spacing: .15em; /* Adjust as needed */
+            animation: typing 3.5s steps(30, end), blink-caret .5s step-end infinite;
         }
 
         .site-sidebar {
             display: flex;
             flex-direction: column;
-            animation: 1s ease-out 0s slideInFromTop;
+            /*animation: 1s ease-out 0s slideInFromTop;*/
         }
 
         .person {
@@ -72,7 +103,7 @@
             height: 50%;
         }
 
-        .js-nav-menu {            
+        .js-nav-menu {
             padding: 0;
             margin: 0;
             color: white;
@@ -94,7 +125,7 @@
             margin: 4px;
         }
 
-            .js-nav-menu li:hover, .menu-icon:hover {
+            .js-nav-menu li:hover {
                 color: black;
                 background-color: white;
             }
@@ -137,7 +168,7 @@
                 margin: 4px;
             }
 
-                .js-nav-menu-responsive li:hover {
+                .js-nav-menu-responsive li:hover:not(:last-child) {
                     color: black;
                     background-color: white;
                 }
@@ -148,7 +179,7 @@
             padding: 16px;
         }
 
-            /*.timeline::before {
+        /*.timeline::before {
                 content: '';
                 width: 2px;
                 top: 420px;
@@ -203,7 +234,8 @@
         }
 
             .project_technologies-tech_tags li {
-                display: inline-block;
+                padding:4px;
+                display: inline-block;                
                 border: double;
                 border-color: coral;
             }
@@ -257,7 +289,7 @@
 
         <ul class="js-nav-menu" id="myMenu">
             <li>About</li>
-            <li>Projects</li>
+            <li>Portfolio</li>
             <li>Music</li>
             <li>Contact</li>
             <li>
@@ -271,7 +303,7 @@
 
     <div class="timeline">
         <div class="timeline-title">
-            <h1>Portfolio</h1>
+            <h1 class="typing">Portfolio</h1>
             <p>See my works below.</p>
         </div>
         <div class="timeline_element">
@@ -279,12 +311,10 @@
                 <p>Now</p>
             </div>
             <div class="timeline_element-content">
-                <h1>SDL GROUP</h1>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    Iusto, optio, dolorum provident rerum aut hic quasi placeat iure tempora laudantium ipsa ad debitis unde?
-                    Iste voluptatibus minus veritatis qui ut.
-                </p>
+                <h1 class="typing">SDL GROUP</h1>
+                <p>Currently at SDL Group i maintain and develop software related to accounting.</p>
+                <p>I have re-factor software components, normalize databases and develop windows services that send emails, do backend processing and web scraping.</p>
+                <p>I as well do tech support when is needed :).</p>
 
                 <div class="project_technologies">
                     <div class="project_technologies-title">Technologies Used</div>
@@ -294,6 +324,7 @@
                         <li>TFS</li>
                         <li>C#</li>
                         <li>Windows Services</li>
+                        <li>BootStrap4</li>
                         <li>SQL Server</li>
                     </ul>
                 </div>
@@ -303,14 +334,11 @@
         <div class="timeline_element">
             <div class="timeline_element-logo">
                 <p>2019</p>
+                <!--<p>October-December</p>-->
             </div>
             <div class="timeline_element-content">
-                <h1>Gamacon</h1>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    Iusto, optio, dolorum provident rerum aut hic quasi placeat iure tempora laudantium ipsa ad debitis unde?
-                    Iste voluptatibus minus veritatis qui ut.
-                </p>
+                <h1 class="typing">Gamacon</h1>
+                <p> During my stay at Gamacon i developed a casual multiplayer game in Unity that added scores to a server in NodeJs. </p>
 
                 <div class="project_technologies">
                     <div class="project_technologies-title">Technologies Used</div>
@@ -323,8 +351,70 @@
                 </div>
             </div>
         </div>
+
+        <div class="timeline_element">
+            <div class="timeline_element-logo">
+                <p>2019</p>
+                <!--<p>July-September</p>-->
+            </div>
+            <div class="timeline_element-content">
+                <h1 class="typing">Furukawa</h1>
+                <p>During my stay at Furukawa QA department i developed a project that managed control plans and failures mode(for it's acronym FMEA)</p>
+
+                <div class="project_technologies">
+                    <div class="project_technologies-title">Technologies Used</div>
+                    <ul class="project_technologies-tech_tags">
+                        <li>Django</li>
+                        <li>SQLite</li>
+                        <li>BootStrap4</li>
+                        <li>AWS</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="timeline_element">
+            <div class="timeline_element-logo">
+                <p>2018</p>
+                <!--<p>July-September</p>-->
+            </div>
+            <div class="timeline_element-content">
+                <h1 class="typing">FRALUCS</h1>
+                <p>During my stay at FRALUCS i reverse engineered the inventory management and bill tracking software of the company.</p>
+
+                <div class="project_technologies">
+                    <div class="project_technologies-title">Technologies Used</div>
+                    <ul class="project_technologies-tech_tags">
+                        <li>Hibernate</li>
+                        <li>Jersey</li>
+                        <li>Primefaces</li>
+                        <li>Java</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="timeline_element">
+            <div class="timeline_element-logo">
+                <p>2017</p>
+            </div>
+            <div class="timeline_element-content">
+                <h1>Instituto de Ingenieria UABC</h1>
+                <p>
+                    Collaborated in a master's degree renewable enery project
+                    in which i developed a data processing system for an anemometer sensor CSAT3 3-D that is patented
+                </p>
+
+                <div class="project_technologies">
+                    <div class="project_technologies-title">Technologies Used</div>
+                    <ul class="project_technologies-tech_tags">
+                        <li>Java</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </div>
-    
+
     <script>
         function showMenu() {
             var x = document.getElementById("myMenu");
