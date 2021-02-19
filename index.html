@@ -1,101 +1,340 @@
+
 <!DOCTYPE html>
 <html>
-<title>E l l i o t W a v e</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">
-<link rel="stylesheet" href="css/index.css">
-<style>
-/*body, html {
-  height: 100%;
-  font-family: "Inconsolata", sans-serif;
-}
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1, minimum-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">
+    <title>Responsive</title>
+    <style>
 
-.bgimg {
-  background-position: center;
-  background-size: cover;
-  background-image: none;
-  min-height: 75%;
-}
+        @keyframes slideInFromTop {
+            0% {
+                transform: translateY(-100%);
+            }
 
-.menu { 
-  display: none;
-}
-*/
+            100% {
+                transform: translateY(0);
+            }
+        }
 
-</style>
+        @keyframes rainbowColors{
+            0%,100% {
+                background-position: 0 0;
+            }
+
+            50% {
+                background-position: 100% 0;
+            }
+        }
+
+        body {
+            margin: 0;
+            font-family:'Inconsolata';
+        }
+
+        .site-sidebar {
+            display: flex;
+            flex-direction: column;
+            animation: 1s ease-out 0s slideInFromTop;
+        }
+
+        .person {
+            padding: 0;
+            margin: 0;
+            background-color: black;
+            text-align: center;
+        }
+
+        .person-content * {
+            background: linear-gradient(to right, #6666ff, #0099ff, #00ff00, #ff3399, #6666ff);
+            -webkit-background-clip: text;
+            /*background-clip: text;*/
+            color: transparent;
+            animation: rainbowColors 6s ease-in-out infinite;
+            background-size: 400% 100%;
+        }
+
+        .person-title {
+            margin: 0;
+        }
+
+        .person-subtitle {
+            margin-top: 4px;
+        }
+
+        .person-avatar .avatar {
+            margin: 4px;
+            margin-top: 10px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+            width: 50%;
+            height: 50%;
+        }
+
+        .js-nav-menu {            
+            padding: 0;
+            margin: 0;
+            color: white;
+            border-top: solid;
+            border-color: gray;
+            position: relative;
+            background-color: black;
+            list-style-type: none;
+            overflow: hidden;
+            font-size: 30px;
+        }
+
+        .menu-icon {
+            color: white;
+            background-color: black;
+        }
+
+        .js-nav-menu li {
+            margin: 4px;
+        }
+
+            .js-nav-menu li:hover, .menu-icon:hover {
+                color: black;
+                background-color: white;
+            }
+
+            .js-nav-menu li:first-child {
+                float: left;
+            }
+
+            .js-nav-menu li:last-child {
+                float: right;
+                margin: 4px;
+            }
+
+            .js-nav-menu li:not(:last-child) {
+                display: none;
+            }
+
+        .js-nav-menu-responsive {
+            padding: 0;
+            margin: 0;
+            border-top: solid;
+            border-color: gray;
+            color: white;
+            position: relative;
+            background-color: black;
+            font-size: 30px;
+        }
+
+            .js-nav-menu-responsive li .menu-icon {
+                position: absolute;
+                right: 0;
+                top: 4px;
+                right: 4px;
+            }
+
+            .js-nav-menu-responsive li {
+                float: none;
+                display: block;
+                text-align: left;
+                margin: 4px;
+            }
+
+                .js-nav-menu-responsive li:hover {
+                    color: black;
+                    background-color: white;
+                }
+
+
+
+        .timeline {
+            padding: 16px;
+        }
+
+            /*.timeline::before {
+                content: '';
+                width: 2px;
+                top: 420px;
+                left: 24px;
+                height: 50%;
+                z-index: -1;
+                position: absolute;
+                background-color: gray;
+            }*/
+
+        .timeline-title {
+            margin-bottom: 8px;
+            text-align: left;
+            border-bottom: dotted;
+        }
+
+            .timeline-title h1 {
+                margin: 0;
+            }
+
+            .timeline-title p {
+                margin-top: 8px;
+                margin-bottom: 8px;
+            }
+
+        .timeline_element {
+            margin-bottom: 32px;
+            display: flex;
+            flex-direction: row;
+        }
+
+        .timeline_element-logo {
+            margin-right: 16px;
+        }
+
+        .timeline_element-content {
+            border: dotted;
+            padding: 16px;
+        }
+
+        .project_technologies {
+            float: right;
+        }
+
+        .project_technologies-title {
+            text-align: right;
+        }
+
+        .project_technologies-tech_tags {
+            margin: 0;
+            list-style-type: none;
+        }
+
+            .project_technologies-tech_tags li {
+                display: inline-block;
+                border: double;
+                border-color: coral;
+            }
+
+        /* Mobile Stlyes */
+        @media all and (min-width: 1px) and (max-width : 480px) {
+        }
+
+        @media all and (min-width: 1px) and (max-width : 480px) {
+            body {
+                /*background-color: cadetblue;*/
+            }
+        }
+
+        /* Tablet Stlyes */
+        @media all and (min-width: 481px) and (max-width : 768px) {
+            body {
+                /*background-color: aqua;*/
+            }
+        }
+
+        /* Laptop Stlyes */
+        @media all and (min-width: 769px) and (max-width : 1059px) {
+            body {
+                background-color: blueviolet;
+            }
+        }
+
+        /* Desktop Stlyes */
+        @media all and (min-width: 1060px) {
+            body {
+                background-color: darkgreen;
+            }
+        }
+    </style>
+
+</head>
 <body>
 
-  <div class="box">
-    <ul id="first-list">
-        <li>
-            <span></span>
-            <div class="title">comment #01</div>
-            <div class="info">the best animation , the best toturials you would ever see .</div>
-            <div class="name">- dr. mohamed -</div>
-            <div class="time">                
-                <span>NOW</span>
+    <aside class="site-sidebar">
+        <div class="person">
+            <div class="person-avatar">
+                <img class="avatar" src="https://scontent.fmxl1-1.fna.fbcdn.net/v/t1.0-9/64294965_470240940420315_6295434673019420672_n.jpg?_nc_cat=102&ccb=3&_nc_sid=09cbfe&_nc_eui2=AeELygOMqVZdYGWN-1TKEME8kM5B10eMTfKQzkHXR4xN8iFFhpICbeXQL6OAx51-1arsbnwsIBn6DHNEAdruRz_y&_nc_ohc=8kc-eUAJYgAAX_7hssA&_nc_ht=scontent.fmxl1-1.fna&oh=fcb12bf846a2f52d34cbb62d04e0dc69&oe=60503F3A" />
             </div>
-        </li>
-        <li>
-            <span></span>
-            <div class="title">summery #01</div>
-            <div class="info">the best animation , the best toturials you would ever see here only . you can learn how to animate and how to use SVG . even else you can add your own animations .</div>
-            <div class="name">- eng. amr -</div>
-            <div class="time">
-                <span>JUN, 29<sup>th</sup></span>
-                <span>11:36 AM</span>
+
+            <div class="person-content">
+                <h1 class="person-title p-name"> Eduardo Elliot Martinez Palomino </h1>
+                <h2 class="person-subtitle p-job-title"> Full-Stack Software Engineer </h2>
             </div>
-        </li>
-        <li>
-            <span></span>
-            <div class="title">comment #02</div>
-            <div class="info">the best animation , the best toturials you would ever see . what about canvas ?? do you like it ..</div>
-            <div class="name">- dr. ahmed -</div>
-            <div class="time">
-                <span>FEB, 2<sup>nd</sup></span>
-                <span>02:00 PM</span>
+        </div>
+
+        <ul class="js-nav-menu" id="myMenu">
+            <li>About</li>
+            <li>Projects</li>
+            <li>Music</li>
+            <li>Contact</li>
+            <li>
+                <a href="javascript:void(0);" class="menu-icon" onclick="showMenu()">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </li>
+        </ul>
+    </aside>
+
+
+    <div class="timeline">
+        <div class="timeline-title">
+            <h1>Portfolio</h1>
+            <p>See my works below.</p>
+        </div>
+        <div class="timeline_element">
+            <div class="timeline_element-logo">
+                <p>Now</p>
             </div>
-        </li>
-        
-    </ul>
-        
-           
-    <ul id="second-list">
-        <li>
-            <span></span>
-            <div class="title">comment #03</div>
-            <div class="info">the best animation , the best toturials you would ever see .</div>
-            <div class="name">- mohamed -</div>
-            <div class="time">
-                <span>MAR, 21<sup>st</sup></span>
-                <span>03:49 PM</span>
+            <div class="timeline_element-content">
+                <h1>SDL GROUP</h1>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Iusto, optio, dolorum provident rerum aut hic quasi placeat iure tempora laudantium ipsa ad debitis unde?
+                    Iste voluptatibus minus veritatis qui ut.
+                </p>
+
+                <div class="project_technologies">
+                    <div class="project_technologies-title">Technologies Used</div>
+                    <ul class="project_technologies-tech_tags">
+                        <li>Telerik</li>
+                        <li>Entity</li>
+                        <li>TFS</li>
+                        <li>C#</li>
+                        <li>Windows Services</li>
+                        <li>SQL Server</li>
+                    </ul>
+                </div>
             </div>
-        </li>
-        <li>
-            <span></span>
-            <div class="title">summery #02</div>
-            <div class="info">the best animation , the best toturials you would ever see here only . you can learn how to animate and how to use SVG . even else you can add your own animations .</div>
-            <div class="name">- mohamed -</div>
-            <div class="time">
-                <span>MAY, 13<sup>rd</sup></span>
-                <span>09:23 AM</span>
+        </div>
+
+        <div class="timeline_element">
+            <div class="timeline_element-logo">
+                <p>2019</p>
             </div>
-        </li>
-        <li>
-            <span></span>
-            <div class="title">comment #04</div>
-            <div class="info">the best animation , the best toturials you would ever see . what about canvas ?? do you like it ..</div>
-            <div class="name">- mohamed -</div>
-            <div class="time">
-                <span>OCT, 15<sup>th</sup></span>
-                <span>08:30 PM</span>
+            <div class="timeline_element-content">
+                <h1>Gamacon</h1>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Iusto, optio, dolorum provident rerum aut hic quasi placeat iure tempora laudantium ipsa ad debitis unde?
+                    Iste voluptatibus minus veritatis qui ut.
+                </p>
+
+                <div class="project_technologies">
+                    <div class="project_technologies-title">Technologies Used</div>
+                    <ul class="project_technologies-tech_tags">
+                        <li>Unity</li>
+                        <li>Fork</li>
+                        <li>NodeJs</li>
+                        <li>SQL Server</li>
+                    </ul>
+                </div>
             </div>
-        </li>
-        
-    </ul>    
-</div>  
-  
+        </div>
+    </div>
+    
+    <script>
+        function showMenu() {
+            var x = document.getElementById("myMenu");
+
+            if (x.className === "js-nav-menu") {
+                x.className += "-responsive";
+            } else {
+                x.className = "js-nav-menu";
+            }
+        }
+    </script>
 </body>
 </html>
