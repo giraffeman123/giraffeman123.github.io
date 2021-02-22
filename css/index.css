@@ -269,9 +269,11 @@
             list-style-type: none;
         }
 
-            .project_technologies-tech_tags li {                
+            .project_technologies-tech_tags li {  
+                margin:4px;              
                 padding: 4px;
-                display: inline-block;
+                float: right;
+                display: block;
                 border: double;
                 border-color:coral;
             }
