@@ -19,8 +19,13 @@
 
             <div class="person-content">
                 <h1 class="person-title p-name"> Eduardo Elliot Martinez Palomino </h1>
-                <h2 class="person-subtitle p-job-title"> Software Engineer/Composer </h2>
+                <h2 class="js-person-subtitle p-job-title" id="personSubtitle"> Full Stack Software Engineer </h2>
             </div>
+
+            <label class="toggle_btn">
+                <input type="checkbox" onclick="changeProfession(this)">
+                <span class="slider round"></span>
+            </label>
         </div>
 
         <nav class="block-main-navigation">
@@ -52,8 +57,8 @@
 
             <div class="js-nav-menu-items" id="menuItems">
                 <li><a href="#about">About Me</a></li>
-                <li><a href="#portfolio">Portfolio</a></li>
-                <li><a href="#music">Music</a></li>
+                <li><a href="#portfolio" id="menuItem2">Portfolio</a></li>
+                <!--<li><a href="#music">Music</a></li>-->
             </div>
         </nav>
 
@@ -82,11 +87,13 @@
     <div class="site-main">
         <div class="about" id="about">
             <h1>About Me</h1>
-            <p>I'm a developer/composer eager to learn new things and fulfill my work and personal expectations. <br /> 
-                I love my profession and I'm committed to my self-improvement.</p>
+            <p>
+                I'm a developer/composer eager to learn new things and fulfill my work and personal expectations. <br />
+                I love my profession and I'm committed to my self-improvement.
+            </p>
         </div>
 
-        <div class="portfolio" id="portfolio">
+        <div class="js-portfolio" id="portfolio">
             <div class="portfolio-title">
                 <h1 class="typing">Portfolio</h1>
                 <p>See my works below.</p>
@@ -204,7 +211,7 @@
             </div>
         </div>
 
-        <div class="music" id="music">
+        <!--<div class="music" id="music">
             <div class="portfolio-title">
                 <h1 class="typing">Music</h1>
                 <p>See my works below.</p>
@@ -238,7 +245,7 @@
                     <div class="timeline_element-content">
                         <h1 class="typing">Anemoia</h1>
                         <p>A concept album inspired by The Legend Of Zelda, Radiohead & a lot of nostalgia.</p>
-                        <img class="album-cover" src="./img/anemoia-album.png"/>
+                        <img class="album-cover" src="./img/anemoia-album.png" />
 
                         <div class="project_technologies">
                             <div class="project_technologies-title">Genre</div>
@@ -253,7 +260,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div>-->
 
     </div>
 
@@ -266,6 +273,190 @@
                 menuItems.style.display = "block";
             } else {
                 menuItems.style.display = "none";
+            }
+
+        }
+
+        function changeProfession(toggleBtn) {            
+            if (toggleBtn.checked == true) {                
+                var professionTitle = document.getElementById("personSubtitle");
+                professionTitle.innerText = "Musician/Composer";
+
+                var menuItem = document.getElementById("menuItem2");
+                menuItem.innerText = "Music";
+
+                var portfolio = document.getElementById("portfolio");
+                portfolio.innerHTML = "<div class=\"portfolio-title\" >"+
+                                        "<h1 class=\"typing\">Music</h1>"+
+                                        "<p>See my works below.</p>"+
+                                    "</div >"+
+
+                                    "<div class=\"timeline\">"+
+                                        "<div class=\"timeline_element\">"+
+                                            "<div class=\"timeline_element-logo\">"+
+                                                "<p>2020</p>"+
+                                            "</div>"+
+                                            "<div class=\"timeline_element-content\">"+
+                                               "<h1 class=\"typing\">Lo-Fi</h1>"+
+                                               "<p>Some chill beats to relax & concentrate. </p>"+
+                                               "<img class=\"album-cover\" src=\"./img/lofi-album.jpg\" />"+
+
+                                               "<div class=\"project_technologies\">"+
+                                                    "<div class=\"project_technologies-title\">Genre</div>"+
+                                                    "<ul class=\"project_technologies-tech_tags\">"+
+                                                        "<li>#Lo-Fi</li>"+
+                                                        "<li>#ChillHop</li>"+
+                                                    "</ul>"+
+                                                    "<button class=\"project_technologies-btn\" onclick=\"location.href = 'https://elliotwave.bandcamp.com/album/-';\">See More</button>"+
+                                                "</div>"+
+                                            "</div>"+
+                                        "</div>"+
+
+                                        "<div class=\"timeline_element\">"+
+                                            "<div class=\"timeline_element-logo\">"+
+                                                "<p>2019-2020</p>"+
+                                            "</div>"+
+                                            "<div class=\"timeline_element-content\">"+
+                                                "<h1 class=\"typing\">Anemoia</h1>"+
+                                                "<p>A concept album inspired by The Legend Of Zelda, Radiohead & a lot of nostalgia.</p>"+
+                                                "<img class=\"album-cover\" src=\"./img/anemoia-album.png\" />"+
+
+                                                "<div class=\"project_technologies\">"+
+                                                    "<div class=\"project_technologies-title\">Genre</div>"+
+                                                    "<ul class=\"project_technologies-tech_tags\">"+                                                                                                                                                                        
+                                                        "<li>#soundtrack</li>" +
+                                                        "<li>#16 bit</li>" +
+                                                    "</ul>"+
+                                                    "<button class=\"project_technologies-btn\" onclick=\"location.href = 'https://elliotwave.bandcamp.com/album/anemoia';\">See More</button>"+
+                                                "</div>"+
+                                            "</div>"+
+                                        "</div>"+
+                                    "</div>";
+            } else {                
+                var professionTitle = document.getElementById("personSubtitle");
+                professionTitle.innerText = "Full Stack Software Engineer";
+
+                var menuItem = document.getElementById("menuItem2");
+                menuItem.innerText = "Portfolio";
+
+
+                var portfolio = document.getElementById("portfolio");
+                portfolio.innerHTML = ""+
+                                    "<div class=\"portfolio-title\">"+
+                                        "<h1 class=\"typing\">Portfolio</h1>"+
+                                        "<p>See my works below.</p>"+
+                                    "</div>"+
+
+                                    "<div class=\"timeline\">"+
+
+                                        "<div class=\"timeline_element\">"+
+                                            "<div class=\"timeline_element-logo\">"+
+                                                "<p>2020-Now</p>"+
+                                            "</div>"+
+                                            "<div class=\"timeline_element-content\">"+
+                                                "<h1 class=\"typing\">SDL GROUP</h1>"+
+                                                "<p>Currently at SDL Group I maintain and develop software related to accounting.</p>"+
+                                                "<p>I have re-factor software components, normalize databases and develop windows services that send emails, do backend processing and web scraping.</p>"+
+                                                "<p>I as well do tech support when is needed :).</p>"+
+
+                                                "<div class=\"project_technologies\">"+
+                                                    "<div class=\"project_technologies-title\">Technologies Used</div>"+
+                                                    "<ul class=\"project_technologies-tech_tags\">"+
+                                                        "<li>Telerik</li>"+
+                                                        "<li>Entity</li>"+
+                                                        "<li>TFS</li>"+
+                                                        "<li>C#</li>"+
+                                                        "<li>Windows Services</li>"+
+                                                        "<li>BootStrap4</li>"+
+                                                        "<li>SQL Server</li>"+
+                                                    "</ul>"+
+                                                "</div>"+
+                                            "</div>"+
+                                        "</div>"+
+
+                                        "<div class=\"timeline_element\">"+
+                                            "<div class=\"timeline_element-logo\">"+
+                                                "<p>2019</p>"+
+                                                "<p>October-December</p>"+
+                                            "</div>"+
+                                            "<div class=\"timeline_element-content\">"+
+                                                "<h1 class=\"typing\">Gamacon</h1>"+
+                                                "<p> During my stay at Gamacon I developed a casual multiplayer game in Unity that added scores to a server in NodeJs. </p>"+
+
+                                                "<div class=\"project_technologies\">"+
+                                                    "<div class=\"project_technologies-title\">Technologies Used</div>"+
+                                                    "<ul class=\"project_technologies-tech_tags\">"+
+                                                        "<li>Unity</li>"+
+                                                        "<li>Fork</li>"+
+                                                        "<li>NodeJs</li>"+
+                                                        "<li>SQL Server</li>"+
+                                                    "</ul>"+
+                                                "</div>"+
+                                            "</div>"+
+                                        "</div>"+
+
+                                        "<div class=\"timeline_element\">"+
+                                            "<div class=\"timeline_element-logo\">"+
+                                                "<p>2019</p>"+
+                                                "<p>July-September</p>"+
+                                            "</div>"+
+                                            "<div class=\"timeline_element-content\">"+
+                                                "<h1 class=\"typing\">Furukawa</h1>"+
+                                                "<p>During my stay at Furukawa QA department I developed a project that managed control plans and failures mode(for it's acronym FMEA)</p>"+
+
+                                                "<div class=\"project_technologies\">"+
+                                                    "<div class=\"project_technologies-title\">Technologies Used</div>"+
+                                                    "<ul class=\"project_technologies-tech_tags\">"+
+                                                        "<li>Django</li>"+
+                                                        "<li>SQLite</li>"+
+                                                        "<li>BootStrap4</li>"+
+                                                        "<li>AWS</li>"+
+                                                    "</ul>"+
+                                                "</div>"+
+                                            "</div>"+
+                                        "</div>"+
+
+                                        "<div class=\"timeline_element\">"+
+                                            "<div class=\"timeline_element-logo\">"+
+                                                "<p>2018</p>"+
+                                                "<p>July-September</p>"+
+                                            "</div>"+
+                                            "<div class=\"timeline_element-content\">"+
+                                                "<h1 class=\"typing\">FRALUCS</h1>"+
+                                                "<p>During my stay at FRALUCS I reverse engineered the inventory management and bill tracking software of the company.</p>"+
+
+                                                "<div class=\"project_technologies\">"+
+                                                    "<div class=\"project_technologies-title\">Technologies Used</div>"+
+                                                    "<ul class=\"project_technologies-tech_tags\">"+
+                                                        "<li>Hibernate</li>"+
+                                                        "<li>Jersey</li>"+
+                                                        "<li>Primefaces</li>"+
+                                                        "<li>Java</li>"+
+                                                    "</ul>"+
+                                                "</div>"+
+                                            "</div>"+
+                                        "</div>"+
+
+                                        "<div class=\"timeline_element\">"+
+                                            "<div class=\"timeline_element-logo\">"+
+                                                "<p>2017-2018</p>"+
+                                            "</div>"+
+                                            "<div class=\"timeline_element-content\">"+
+                                                "<h1 class=\"blink-caret\">Instituto de Ingenieria UABC</h1>"+
+                                                "<p>"+
+                                                    "Collaborated in a master's degree renewable enery project"+
+                                                    "in which I developed a data processing system for an anemometer sensor CSAT3 3-D that is patented"+
+                                                "</p>"+
+
+                                                "<div class=\"project_technologies\">"+
+                                                    "<div class=\"project_technologies-title\">Technologies Used</div>"+
+                                                    "<ul class=\"project_technologies-tech_tags\">"+
+                                                        "<li>Java</li>"+
+                                                    "</ul>"+
+                                                "</div>"+
+                                            "</div>"+
+                                        "</div>"+
+                                    "</div>";
             }
 
         }
