@@ -184,6 +184,10 @@ body {
         border-bottom: dotted;
     }
 
+    .about > h3{
+        border-bottom: 1px solid gray;
+    }
+
     .about p {
         padding: 4px;
         border: outset;

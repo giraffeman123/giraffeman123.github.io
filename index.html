@@ -91,6 +91,69 @@
                 I'm a developer/composer eager to learn new things and fulfill my work and personal expectations. <br />
                 I love my profession and I'm committed to my self-improvement.
             </p>
+
+            <style>                
+                .languages > h4, .languages > h5{
+                    margin:4px;
+                    text-align: center;
+                }
+
+                .loading_bar{
+                    position:relative;
+                    margin: 0px;
+                    height: 16px;
+                    text-align: center;                    
+                }
+
+                .loading_bar > span{
+                    position: relative;
+                    display: block;
+                    height: 100%;
+                }
+
+                .loading_bar > span::after{                    
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    background: linear-gradient(to right,#02e2ff, #00ff00);
+                    animation: loading 2s 1;
+                }
+
+                @keyframes loading {
+                    0%{
+                        width: 0%;
+                    }
+                    100%{
+                        width: 100%;
+                    }
+                }
+            </style>
+
+            <h3>Academic Info</h3>
+            <div class="academic_info">
+                <ul style="list-style-type: square;">
+                    <li> Universidad Autonoma de Baja California</li>
+                    (August 2015 - December 2020)
+                    <li> Université Pierre et Marie Curie (Paris 6)</li>
+                    (August 2018 - January 2019)
+                </ul>
+            </div>
+
+            <h3>Languages</h3>
+            <div class="languages">        
+                <h4>Spanish</h4>        
+                <h5>100%</h5>
+                <div class="loading_bar"><span style="width: 100%;"></span></div>
+                <h4>French</h4>        
+                <h5>70%</h5>
+                <div class="loading_bar"><span style="width: 70%;"></span></div>
+                <h4>English</h4>        
+                <h5>90%</h5>
+                <div class="loading_bar"><span style="width: 90%;"></span></div>
+            </div>
         </div>
 
         <div class="js-portfolio" id="portfolio">
